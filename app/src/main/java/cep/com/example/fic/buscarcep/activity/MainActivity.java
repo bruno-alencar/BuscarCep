@@ -1,5 +1,6 @@
 package cep.com.example.fic.buscarcep.activity;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -88,6 +89,17 @@ public class MainActivity extends AppCompatActivity {
 
     private class ConsultarCepAsyncTask extends AsyncTask<String, Void, Cep>{
 
+        private ProgressDialog progresso;
+
+        @Override
+        protected void onPreExecute() {
+            progresso = ProgressDialog.show(MainActivity.this, "Aguarde", "Pesquisando pelo CEP");
+            try{
+                Thread.sleep(3000);
+            }catch (Exception erro){
+
+            }
+        }
 
         @Override
         protected Cep doInBackground(String... params) {
