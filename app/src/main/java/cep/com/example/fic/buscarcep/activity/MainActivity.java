@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             progresso = ProgressDialog.show(MainActivity.this, "Aguarde", "Pesquisando pelo CEP");
             try{
                 Thread.sleep(3000);
+                progresso.dismiss();
             }catch (Exception erro){
 
             }
